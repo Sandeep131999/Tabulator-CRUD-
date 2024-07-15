@@ -1,0 +1,35 @@
+/*Theme the Tabulator element*/
+#example-table-theme, #tabulatorDepartment, #tabulatorDesignation{
+    background-color:#ffffff;
+    border: 0.5px solid #f0a910;
+    border-radius: 10px;
+}
+
+/*Theme the header*/
+#example-table-theme, #tabulatorDepartment, #tabulatorDesignation .tabulator-header {
+    background-color:#1b1b1b;
+    color:#010101;
+}
+
+/*Allow column header names to wrap lines*/
+#example-table-theme, #tabulatorDepartment, #tabulatorDesignation .tabulator-header .tabulator-col,
+#example-table-theme, #tabulatorDepartment, #tabulatorDesignation .tabulator-header .tabulator-col-row-handle {
+    white-space: normal;
+}
+
+/*Color the table rows*/
+#example-table-theme, #tabulatorDepartment, #tabulatorDesignation .tabulator-tableHolder .tabulator-table .tabulator-row{
+    color:#fff;
+    background-color: #666;
+}
+
+/*Color even rows*/
+    #example-table-theme, #tabulatorDepartment, #tabulatorDesignation .tabulator-tableHolder .tabulator-table .tabulator-row:nth-child(even) {
+    background-color: #f5f1f1;
+}
+
+.disabled-button {
+    pointer-events: none; /* Prevent clicks */
+    opacity: 0.5; /* Visual indication of being disabled */
+    cursor: not-allowed; /* Change cursor to indicate disabled state */
+}

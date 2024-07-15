@@ -1,0 +1,6 @@
+.tabulator-row .tabulator-cell.tabulator-editing {
+    border: 1px solid #e32d2d;
+    outline: none;
+    padding: 0;
+    /* Add your custom styling for editing cells */
+}
