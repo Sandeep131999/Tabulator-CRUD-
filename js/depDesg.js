@@ -2,11 +2,11 @@ var enableDepartDetailsIcons = true;
 var disableDepartDetailsIcons = true;
 
 function departHeaderDetailsIconFormatter(cell) {
-    // create edit icon
+    //Add icon
     var addIcon = document.createElement("span");
     addIcon.innerHTML = "<i class='fa-solid fa-add'></i>";
     addIcon.classList.add("btn-add");
-    addIcon.style.marginTop = "5px";
+    addIcon.setAttribute("title", "Add new department");
     addIcon.style.color="blue";
     addIcon.addEventListener("click", function () {
         toggleEditMode(cell, iconContainer);
@@ -36,7 +36,8 @@ function departHeaderDetailsIconFormatter(cell) {
         var saveIcons = document.createElement("span");
         saveIcons.innerHTML = "<i class='fas fa-save'></i>";
         saveIcons.classList.add("btn-save");
-        saveIcons.style.color="blue";
+        saveIcons.style.color="orange";
+        saveIcons.setAttribute("title", "Save department");
         saveIcons.addEventListener("click", function () {
    
         });
@@ -47,7 +48,8 @@ function departHeaderDetailsIconFormatter(cell) {
         cancelIcons.style.marginLeft = "25px";
         cancelIcons.classList.add("btn-cancel");
         cancelIcons.style.color="red";
-        cancelIcons.addEventListener("click", function (event, rows) {
+        cancelIcons.setAttribute("title", "Cancel");
+        cancelIcons.addEventListener("click", function (event) {
             event.preventDefault();
             event.stopPropagation();
             var firstRow = table.getRows()[0]; // Get the first row object
@@ -79,10 +81,7 @@ function departDetailsIconFormatter(cell) {
     editIcon.innerHTML = "<i class='fa-solid fa-pen'></i>";
     // editIcon.classList.add("btn-edit");
     editIcon.style.color="blue";
-    if (!disableDepartDetailsIcons) {
-        editIcon.classList.add("disabled-button");
-        editIcon.style.pointerEvents = "none"; // Disable interaction
-    }
+    editIcon.classList.add("disabled-button");
     editIcon.addEventListener("click", function () {
         toggleEditMode(cell, iconContainer);
     });
@@ -163,7 +162,7 @@ var table = new Tabulator("#tabulatorDepartment", {
     ],
     columns: [
         { 
-            title: "Department Id", 
+            title: "Department Id     <i class='fa-regular fa-building'></i>", 
             field: "id"
         },
         { 
@@ -266,9 +265,22 @@ var tables = new Tabulator("#tabulatorDesignation", {
         { desg_Id: "004", desg_Name: "Senior sofware engineer" },
     ],
     columns: [
-        { title: "DesgId", field: "desg_Id", sorter: "string"},
-        { title: "DesgName", field:"desg_Name", sorter: "string",editor:"input"}, 
-        {title: "CRUD Operations",hozAlign:"center",formatter: designationDetailsIconFormatter},
+        { 
+            title: " Designation Id  <i class='fa-solid fa-user-tie'></i>", 
+            field: "desg_Id", 
+            sorter: "string"
+        },
+        { 
+            title: "DesignationName", 
+            field:"desg_Name", 
+            sorter: "string",
+            editor:"input"
+        }, 
+        {
+            title: "CRUD Operations",
+            hozAlign:"center",
+            formatter: designationDetailsIconFormatter
+        },
     ],
 });
 
