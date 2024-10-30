@@ -1,4 +1,4 @@
-#  Tabulator(BoilerPlate) and MDB Bootstrap
+#  Tabulator prototype to perform insert, update, and delete operations within the same table.
 <a href="http://tabulator.info/">
     <img src="https://tabulator.info/images/logos/t_square_hollow.png" alt="Tabulator.js" width="200" height="200">
 </a>
